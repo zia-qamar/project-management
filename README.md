@@ -1,24 +1,57 @@
-# README
+# Project Conversation Management!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web application for managing projects and their associated comments. The application allows users to create new projects, view project details, and update the status of a project. Users can also create comments for a project and view all comments associated with a project.
 
-Things you may want to cover:
 
-* Ruby version
+Please setup your environment following the `Getting Started`.
 
-* System dependencies
+## Getting Started
 
-* Configuration
+1. Clone repository
 
-* Database creation
+2. Install Ruby version
 
-* Database initialization
+```sh
+$ rvm install 2.7.3
+```
 
-* How to run the test suite
+3. Install PostgreSQL >9.4 and start it
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+$ brew install postgresql
+```
 
-* Deployment instructions
+4. Navigate to project directory and run following
 
-* ...
+```sh
+bundle install
+rails db:create
+rails db:migrate
+```
+5. Run specs
+
+```sh
+$ rspec
+```
+
+6. Start the server
+
+```sh
+$ rails server
+```
+
+7. Open your browser
+
+[http://localhost:3000](http://localhost:3000/)
+
+### Demo Video
+[Here](https://drive.google.com/file/d/1kBvG6GyafYKlX5NX8--SGcAN292-pnRM/view?usp=sharing)
+
+### Future Improvements
+There are several improvements that could be made to the application, including:
+
+* Adding the ability to assign projects to specific users or teams
+* Allow to remove or update project comments
+* Adding user authorization for accessing projects and comments
+* Adding more robust error handling and error messages
+
