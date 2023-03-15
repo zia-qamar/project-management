@@ -37,7 +37,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "rspec-rails"
   gem "rubocop"
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem "web-console", ">= 4.1.0"
@@ -56,6 +55,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
 end
-
+gem "factory_bot_rails"
+gem "rspec-rails", "~> 4.1.0"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :projects do
     put :update_status, on: :member
-    resources :comments, only: [:create]
   end
+  resources :comments, only: [:create]
 end

@@ -64,9 +64,9 @@ class ProjectsController < ApplicationController
       if @project.update(status: params[:status])
         comment = Comment.create_status_comment(from_status, current_user, @project)
         CommentBroadcastService.new(comment, current_user).call
-        format.json { render json: { status: @project.status, msg: "Status updated" } }
+        format.json { render json: { project_status: @project.status, msg: "Status updated" } }
       else
-        format.json { render json: { error: @project.errors.full_messages.join } }
+        format.json { render json: { error: @project.errors.full_messages.join }, status: :unprocessable_entity }
       end
     end
   end

@@ -3,7 +3,7 @@
      class="mb-8 mt-2">
 
   <%= form_for Comment.new,
-               url: project_comments_path(@project),
+               url: comments_path,
                remote: true,
                class: "flex flex-col space-y-4" do |form| %>
 

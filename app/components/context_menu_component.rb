@@ -20,7 +20,7 @@ class ContextMenuComponent < ViewComponent::Base
   class ToggleComponent < ViewComponent::Base
     attr_reader :classes, :data
 
-    def initialize( classes: "", data: {})
+    def initialize(classes: "", data: {})
       @classes = classes
       @data = data
     end
