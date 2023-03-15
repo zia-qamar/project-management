@@ -1,0 +1,48 @@
+<h1 class="text-3xl font-bold mb-6">Projects</h1>
+
+<table class="table-auto w-full border-collapse">
+  <thead>
+  <tr class="bg-gray-200">
+    <th class="px-4 py-2 text-left">Title</th>
+    <th class="px-4 py-2 text-left">Description</th>
+    <th class="px-4 py-2 text-left">Status</th>
+    <th class="px-4 py-2 text-left">User</th>
+    <th class="px-4 py-2 text-left">Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr class="<%= cycle('bg-gray-100', 'bg-gray-200') %>">
+      <td class="border px-4 py-2"><%= project.title %></td>
+      <td class="border px-4 py-2"><%= project.description %></td>
+      <td class="border px-4 py-2"><%= project.status %></td>
+      <td class="border px-4 py-2"><%= project.user.full_name %></td>
+      <td>
+        <%= render(ContextMenuComponent.new) do |c| %>
+          <% c.toggle do %>
+            <%= image_tag 'dots.png', class: 'icon' %>
+          <% end %>
+          <% c.drop(modifiers: %w[left bottom-tighter small]) do %>
+            <ul>
+              <li class="c-context-menu__item">
+                <%= link_to "Show", project %>
+              </li>
+              <li class="c-context-menu__item">
+                <%= link_to "Edit", edit_project_path(project) %>
+              </li>
+              <li class="c-context-menu__item">
+                <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </li>
+            </ul>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path, class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' %>

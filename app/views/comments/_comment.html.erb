@@ -1,0 +1,8 @@
+<li class="border-2 border-gray-200 p-2 mb-2 rounded-md comment_type--<%= comment.comment_type %>">
+  <div class="card mb-3">
+    <div class="card-body">
+      <p class="card-text"><%= comment.content %></p>
+      <small class="text-muted">Posted by <%= comment.user.full_name %> at <%= comment.created_at.strftime('%D %H:%M %p') %></small>
+    </div>
+  </div>
+</li>

@@ -1,0 +1,15 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.comment_type--comment {
+  background-image: image-url("comment.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 31px 25px;
+}
+.comment_type--status_change {
+  background-image: image-url("status.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 31px 25px;
+}

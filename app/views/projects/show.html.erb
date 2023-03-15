@@ -1,0 +1,14 @@
+<div class="max-w-md mx-auto">
+  <div data-controller="projects" data-projects-project-id="<%= @project.id %>">
+    <h1 class="text-2xl font-bold mb-4"><%= @project.title %></h1>
+    <p class="mb-8"><%= @project.description %></p>
+    <div class="flex flex-col mb-4">
+      <%= label_tag "status", "Status", class: "mb-2 font-medium text-gray-700" %>
+      <%= select_tag 'status', options_for_select(Project.statuses.keys.map {|status| [status.titleize, status] }, @project.status),
+                     data: { action: "change->projects#updateStatus" },
+                     class: "py-2 px-4 border border-gray-300 rounded-lg shadow-sm" %>
+    </div>
+  </div>
+  <hr>
+  <%= render partial: "comments/form" %>
+</div>
